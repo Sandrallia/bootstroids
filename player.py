@@ -9,6 +9,7 @@ class Player(CircleShape):
         super().__init__(x, y, radius)
         self.rotation = 0
         self.reload = 0
+        self.score = 0
 
     # in the player class
     def triangle(self):
@@ -51,3 +52,6 @@ class Player(CircleShape):
         bullet.velocity = bullet.velocity.rotate(self.rotation)
         bullet.velocity += bullet.velocity * PLAYER_SHOOT_SPEED
         self.reload = PLAYER_RELOAD
+
+    def point(self):
+        self.score += 1
